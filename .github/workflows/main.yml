@@ -1,0 +1,21 @@
+name: github_actios_flaskapp
+
+on:
+  push:
+    branches: 
+      - master 
+
+jobs: 
+  test: 
+    runs-on: ubuntu-latest 
+
+    steps: 
+    - name: Print hello message
+      run: echo "Aloha from test"
+  
+  deploy: 
+    runs-on: ubuntu-latest
+
+    steps: 
+    - name: Print Hello message
+      run: echo "Aloha from deploy"
