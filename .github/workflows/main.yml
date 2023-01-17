@@ -3,7 +3,7 @@ name: github_actios_flaskapp
 on:
   push:
     branches: 
-      - master 
+      - main
 
 jobs: 
   test: 
