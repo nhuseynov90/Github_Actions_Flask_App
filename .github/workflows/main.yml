@@ -15,7 +15,7 @@ jobs:
   
   deploy: 
     runs-on: ubuntu-latest
-
+    needs: [test]
     steps: 
     - name: Print Hello message
       run: echo "Aloha from deploy"
