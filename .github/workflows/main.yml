@@ -1,4 +1,7 @@
 name: github_actios_flaskapp
+env:
+  APP_NAME: "flaskapp"
+  PACKAGE_NAME: "flask_package_ver_${{ github.sha }}"
 
 on:
   push:
@@ -12,6 +15,12 @@ jobs:
     steps: 
     - name: Print hello message
       run: echo "Test passed successfully!"
+    
+    - name: Execute some commands 
+      run: |
+        echo "Hello message1"
+        echo "Hello message2"
+        echo "Application name is: ${{ env.APP_NAME }}"
   
   deploy: 
     runs-on: ubuntu-latest
@@ -19,3 +28,6 @@ jobs:
     steps: 
     - name: Print Hello message
       run: echo "Aloha from deploy"
+
+    - name: Deployment package
+      run: echo "Deployed package name is: {{ env.PACKAGE_NAME }}"
