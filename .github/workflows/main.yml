@@ -30,4 +30,5 @@ jobs:
       run: echo "Aloha from deploy"
 
     - name: Deployment package
-      run: echo "Deployed package name is: {{ env.PACKAGE_NAME }}"
+      run: | 
+        echo "Deployed package is: ${{ env.PACKAGE_NAME }}"
